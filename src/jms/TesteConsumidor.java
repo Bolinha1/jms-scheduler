@@ -23,7 +23,7 @@ public class TesteConsumidor {
 	public static void main(String[] args)  throws Exception {
 		
 		InitialContext context = new InitialContext();
-		ConnectionFactory factory = (ConnectionFactory) context.lookup("ConnectionFactory"); 
+		ConnectionFactory factory = (ConnectionFactory) context.lookup("myFactoryLookup");
 		Connection connection = factory.createConnection();
 		connection.start();
 		

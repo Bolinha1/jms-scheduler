@@ -10,7 +10,8 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.naming.InitialContext;
-
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import org.apache.activemq.ScheduledMessage;
 
 public class TesteProdutor {
@@ -19,7 +20,7 @@ public class TesteProdutor {
 	public static void main(String[] args)  throws Exception {
 		
 		InitialContext context = new InitialContext();
-		ConnectionFactory factory = (ConnectionFactory) context.lookup("ConnectionFactory"); 
+		ConnectionFactory factory = (ConnectionFactory) context.lookup("myFactoryLookup");
 		Connection connection = factory.createConnection();
 		connection.start();
 		
